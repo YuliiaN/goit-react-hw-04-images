@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 export const Modal = ({ picture, alt, onClose }) => {
   useEffect(() => {
-    window.addEventListener('keydown', onCloseByEsc);
-
     function onCloseByEsc(e) {
       if (e.code === 'Escape') {
         onClose();
       }
     }
+
+    window.addEventListener('keydown', onCloseByEsc);
 
     return () => {
       window.removeEventListener('keydown', onCloseByEsc);
